@@ -1,0 +1,30 @@
+openapi: 3.1.0
+info:
+  title: ProjectFlow Project Management API
+  version: 1.0.0-week6
+paths:
+  /v1/projects:
+    get:
+      summary: List projects
+    post:
+      summary: Create project
+      parameters:
+        - in: header
+          name: X-User-Id
+          required: true
+          schema: {type: string}
+  /v1/projects/{project_id}:
+    get: {summary: Get project}
+    patch: {summary: Update project}
+    delete: {summary: Delete project}
+  /v1/projects/{project_id}/members:
+    post: {summary: Add project member}
+  /v1/projects/{project_id}/tasks:
+    get: {summary: List project tasks}
+    post: {summary: Create project task}
+  /v1/projects/{project_id}/summary:
+    get: {summary: Project health summary}
+  /v1/tasks/{task_id}:
+    get: {summary: Get task}
+    patch: {summary: Update task}
+    delete: {summary: Delete task}
